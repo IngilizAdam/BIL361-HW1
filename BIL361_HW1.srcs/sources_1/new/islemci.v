@@ -18,10 +18,11 @@ module islemci(
     
     always @* begin
         if (simdiki_buyruk[6:0] == 7'b0110111) begin // LUI
-            
+            yazmac_obegi[simdiki_buyruk[11:7]/4] = {simdiki_buyruk[31:12], 12'b0};
         end
         else if (simdiki_buyruk[6:0] == 7'b0010111) begin // AUIPC
-            
+            ps = {simdiki_buyruk[31:12], 12'h0} + ps + 32'b100;
+            yazmac_obegi[simdiki_buyruk[11:7]/4] = ps;
         end
         else if (simdiki_buyruk[6:0] == 7'b1101111) begin // JAL
             
