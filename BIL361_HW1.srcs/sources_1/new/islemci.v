@@ -4,13 +4,11 @@ module islemci(
     input [31:0] buyruk,
     output reg [31:0] ps,
     // bunun asagisi debug icin kullanildi
-    output reg [31:0] yeni_adres,
-    output reg [31:0] yazmac_obegi [7:0],
-    output reg [31:0] veri_bellek [127:0]
+    output reg [31:0] yeni_adres
     );
     
-    //reg [31:0] veri_bellek [127:0];
-    //reg [31:0] yazmac_obegi [7:0];
+    reg [31:0] veri_bellek [127:0];
+    reg [31:0] yazmac_obegi [7:0];
     reg [31:0] buyruk_adresi;
     
     //reg [31:0] yeni_adres;
