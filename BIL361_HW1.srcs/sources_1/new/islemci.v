@@ -49,6 +49,7 @@ module islemci(
         end
         else if (buyruk[6:0] == 7'b1100011 && buyruk[14:12] == 3'b000) begin // BEQ
             if(yazmac_obegi[buyruk[19:15]/4] == yazmac_obegi[buyruk[24:20]/4]) begin
+                $display("Girdim %d", buyruk_adresi);
                 if(buyruk[31:31] == 1'b0) begin
                     yeni_adres = buyruk_adresi + {19'b0000000000000000000, buyruk[31:31], buyruk[7:7], buyruk[30:25], buyruk[11:8], 1'b0};
                 end
