@@ -4,12 +4,13 @@ module islemci(
     input [31:0] buyruk,
     output reg [31:0] ps,
     // bunun asagisi debug icin kullanildi
-    output reg [31:0] yeni_adres
+    output reg [31:0] yeni_adres,
+    output reg [31:0] yazmac_obegi [7:0],
+    output reg [31:0] veri_bellek [127:0]
     );
     
-    reg [31:0] veri_bellek [127:0];
-    reg [31:0] yazmac_obegi [7:0];
-    reg [31:0] buyruk_bellegi [255:0];
+    //reg [31:0] veri_bellek [127:0];
+    //reg [31:0] yazmac_obegi [7:0];
     reg [31:0] buyruk_adresi;
     
     //reg [31:0] yeni_adres;
@@ -17,7 +18,8 @@ module islemci(
     reg [31:0] bellek_adresi;
     
     initial begin
-            ps <= 32'h0000_0000;
+        ps <= 32'h0000_0000;
+        yazmac_obegi[0] <= 32'h0000_0000; // R0 her zaman 0
     end
     
     always @* begin
