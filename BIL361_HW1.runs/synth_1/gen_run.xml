@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1666900657" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/islemci.dcp">
-  <File Type="PA-TCL" Name="islemci.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="islemci_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="islemci_reports.tcl"/>
-  <File Type="RDS-RDS" Name="islemci.vds"/>
-  <File Type="RDS-UTIL" Name="islemci_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="islemci_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="islemci.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="islemci_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="islemci_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1668192162" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/islemci.dcp">
+  <File Type="PA-TCL" Name="islemcia.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="islemcia_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="islemcia_reports.tcl"/>
+  <File Type="RDS-RDS" Name="islemcia.vds"/>
+  <File Type="RDS-UTIL" Name="islemcia_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="islemcia_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="islemcia.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="islemcia_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="islemcia_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/islemcia.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/islemci.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,8 +28,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="islemci"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="islemcia"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

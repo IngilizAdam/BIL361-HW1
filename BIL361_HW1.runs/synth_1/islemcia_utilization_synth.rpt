@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Oct 27 22:58:26 2022
+| Date         : Fri Nov 11 21:43:26 2022
 | Host         : Qwerty running 64-bit major release  (build 9200)
-| Command      : report_utilization -file islemci_utilization_synth.rpt -pb islemci_utilization_synth.pb
-| Design       : islemci
+| Command      : report_utilization -file islemcia_utilization_synth.rpt -pb islemcia_utilization_synth.pb
+| Design       : islemcia
 | Device       : xc7k70tfbv676-1
 | Speed File   : -1
 | Design State : Synthesized
----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -31,14 +31,14 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  713 |     0 |          0 |     41000 |  1.74 |
-|   LUT as Logic             |  561 |     0 |          0 |     41000 |  1.37 |
-|   LUT as Memory            |  152 |     0 |          0 |     13400 |  1.13 |
-|     LUT as Distributed RAM |  152 |     0 |            |           |       |
+| Slice LUTs*                |  681 |     0 |          0 |     41000 |  1.66 |
+|   LUT as Logic             |  545 |     0 |          0 |     41000 |  1.33 |
+|   LUT as Memory            |  136 |     0 |          0 |     13400 |  1.01 |
+|     LUT as Distributed RAM |  136 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            |   95 |     0 |          0 |     82000 |  0.12 |
-|   Register as Flip Flop    |   95 |     0 |          0 |     82000 |  0.12 |
-|   Register as Latch        |    0 |     0 |          0 |     82000 |  0.00 |
+| Slice Registers            |  140 |     0 |          0 |     82000 |  0.17 |
+|   Register as Flip Flop    |   64 |     0 |          0 |     82000 |  0.08 |
+|   Register as Latch        |   76 |     0 |          0 |     82000 |  0.09 |
 | F7 Muxes                   |    0 |     0 |          0 |     20500 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     10250 |  0.00 |
 +----------------------------+------+-------+------------+-----------+-------+
@@ -58,10 +58,10 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
+| 1     |          Yes |           - |          Set |
+| 75    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 95    |          Yes |       Reset |            - |
+| 64    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -121,7 +121,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    3 |     0 |          0 |        32 |  9.38 |
 | BUFIO      |    0 |     0 |          0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         6 |  0.00 |
@@ -155,20 +155,22 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  211 |                 LUT |
-| LUT6     |  167 |                 LUT |
-| LUT5     |  118 |                 LUT |
-| RAMD32   |   96 |  Distributed Memory |
-| FDRE     |   95 |        Flop & Latch |
+| LUT2     |  269 |                 LUT |
+| LUT6     |  160 |                 LUT |
 | RAMD64E  |   88 |  Distributed Memory |
+| LDCE     |   75 |        Flop & Latch |
+| LUT4     |   73 |                 LUT |
 | CARRY4   |   71 |          CarryLogic |
-| LUT4     |   61 |                 LUT |
-| LUT3     |   51 |                 LUT |
+| RAMD32   |   68 |  Distributed Memory |
+| FDRE     |   64 |        Flop & Latch |
+| LUT5     |   59 |                 LUT |
 | IBUF     |   33 |                  IO |
-| RAMS32   |   32 |  Distributed Memory |
 | OBUF     |   32 |                  IO |
-| LUT1     |    4 |                 LUT |
-| BUFG     |    1 |               Clock |
+| LUT3     |   26 |                 LUT |
+| RAMS32   |   20 |  Distributed Memory |
+| LUT1     |    5 |                 LUT |
+| BUFG     |    3 |               Clock |
+| LDPE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
 
