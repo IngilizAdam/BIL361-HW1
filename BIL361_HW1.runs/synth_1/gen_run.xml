@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1668192162" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/islemci.dcp">
   <File Type="PA-TCL" Name="islemcia.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="islemcia_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="islemcia_reports.tcl"/>
   <File Type="RDS-RDS" Name="islemcia.vds"/>
   <File Type="RDS-UTIL" Name="islemcia_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="islemcia_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="islemcia.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="islemcia_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="islemcia_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/islemcia.v">

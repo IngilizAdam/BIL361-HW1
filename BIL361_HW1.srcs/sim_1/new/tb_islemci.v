@@ -11,7 +11,7 @@ module tb_islemci();
     initial begin
         clk <= 0;
         rst <= 0;
-        buyruk_bellegi[0]  <= 32'b000000000010_00000_000_00001_0010011;
+        /*buyruk_bellegi[0]  <= 32'b000000000010_00000_000_00001_0010011;
         buyruk_bellegi[1]  <= 32'b000000000100_00000_000_00010_0010011;
         buyruk_bellegi[2]  <= 32'b000000000110_00000_000_00011_0010011;
         buyruk_bellegi[3]  <= 32'b000000001000_00000_000_00100_0010011;
@@ -50,7 +50,17 @@ module tb_islemci();
         buyruk_bellegi[36] <= 32'h02402183;
         buyruk_bellegi[37] <= 32'h00310133;
         buyruk_bellegi[38] <= 32'h401101b3;
-        buyruk_bellegi[39] <= 32'h1e302e23;
+        buyruk_bellegi[39] <= 32'h1e302e23;*/
+        buyruk_bellegi[0] = 32'h00000013; //ADDI x2, x2, 0    x0 = 0;
+        buyruk_bellegi[1] = 32'h00508093; //ADDI x1, x1, 5    x1 = 5;
+        buyruk_bellegi[2] = 32'h00100663; //BEQ  x2, x1, 12   if x1 != x0, inc x0
+        buyruk_bellegi[3] = 32'h00100013; //ADDI x2, x2, 1    inc x0;
+        buyruk_bellegi[4] = 32'hff9ff2ef; //JAL  x5, -8       jump to BEQ, x1 = program_counter + 4;
+        buyruk_bellegi[5] = 32'h00500013; //ADDI x2, x2, 5    x0 = 10;
+        buyruk_bellegi[6] = 32'h00108093; //ADDI x1, x1, 1    inc x1;
+        buyruk_bellegi[7] = 32'hfe009ee3; //BNE  x1, x2, -4   jump to previous ADDI
+        buyruk_bellegi[8] = 32'hfffff3b7; //LUI  x7, -1       x7 = -4096;
+        buyruk_bellegi[9] = 32'hfffd8317; //AUIPC x6, -40     x6 = 0;
     end
     
     always #5 clk <= ~clk;
