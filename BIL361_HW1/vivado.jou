@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Mon Nov 21 22:02:20 2022
-# Process ID: 15276
+# Start of session at: Mon Nov 21 22:55:21 2022
+# Process ID: 8336
 # Current directory: C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5812 C:\Users\hasan\Desktop\Projects\Vivado\BIL361_HW1\BIL361_HW1\BIL361_HW1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5964 C:\Users\hasan\Desktop\Projects\Vivado\BIL361_HW1\BIL361_HW1\BIL361_HW1.xpr
 # Log file: C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/vivado.log
 # Journal file: C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1\vivado.jou
 # Running On: Qwerty, OS: Windows, CPU Frequency: 2400 MHz, CPU Physical cores: 4, Host memory: 17044 MB
@@ -13,3 +13,88 @@
 start_gui
 open_project C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.xpr
 update_compile_order -fileset sources_1
+close [ open C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.srcs/sources_1/new/islemci.v w ]
+add_files C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.srcs/sources_1/new/islemci.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.srcs/sources_1/new/islemcia.v] -no_script -reset -force -quiet
+remove_files  C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.srcs/sources_1/new/islemcia.v
+file delete -force C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.srcs/sources_1/new/islemcia.v
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_a [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_a.tcl
+relaunch_sim
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_b [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_b.tcl
+relaunch_sim
+relaunch_sim
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top islemci [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_a [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_a.tcl
+relaunch_sim
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+source tb_a.tcl
+relaunch_sim
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_b [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_b.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_islemci [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_islemci.tcl
+relaunch_sim
+close_sim

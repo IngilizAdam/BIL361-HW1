@@ -7,7 +7,7 @@ reg             rst_i;
 wire    [31:0]  ps_o;
 reg     [31:0]  buyruk_i;
 
-islemcia uut (
+islemci uut (
     .clk        ( clk_i ),
     .rst        ( rst_i ),
     .ps         ( ps_o ),

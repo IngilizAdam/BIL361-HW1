@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module islemcia(
+module islemci(
     input clk, rst,
     input [31:0] buyruk,
     output [31:0] ps
@@ -38,14 +38,7 @@ module islemcia(
         ps_sonraki = buyruk_adresi;
         if(rst == 1'b1) begin
             ps_sonraki = 32'b0;
-            yazmaca_yaz = 1'b0;
-            bellege_yaz = 1'b0;
-            for(i = 0; i < 128; i = i + 1)
-                veri_bellek[i] = 32'b0;
-
-            for(i = 0; i < 8; i = i + 1)
-                yazmac_obegi[i] = 32'b0;
-            end
+        end
         else if (buyruk[6:0] == 7'b0110111) begin // LUI
             rd_adres = buyruk[11:7];
             rd_veri = {buyruk[31:12], 12'b0};
@@ -209,11 +202,19 @@ module islemcia(
     end
 
     always @(negedge clk) begin
-        if(yazmaca_yaz && rd_adres != 32'b0) begin
-            yazmac_obegi[rd_adres] <= rd_veri;
+        if(rst) begin
+            for(i = 0; i < 128; i = i + 1)
+                veri_bellek[i] <= 32'b0;
+            for(i = 0; i < 8; i = i + 1)
+                yazmac_obegi[i] <= 32'b0;
         end
-        if(bellege_yaz) begin
-            veri_bellek[bellek_adresi/4] <= bellek_veri;
+        else begin
+            if(yazmaca_yaz && rd_adres != 32'b0) begin
+                yazmac_obegi[rd_adres] <= rd_veri;
+            end
+            if(bellege_yaz) begin
+                veri_bellek[bellek_adresi/4] <= bellek_veri;
+            end
         end
     end
     

@@ -6,7 +6,7 @@ module tb_islemci();
     reg clk, rst;
     reg [31:0] buyruk;
     wire [31:0] ps;
-    islemcia i(clk, rst, buyruk, ps);
+    islemci i(clk, rst, buyruk, ps);
     
     initial begin
         clk <= 0;
