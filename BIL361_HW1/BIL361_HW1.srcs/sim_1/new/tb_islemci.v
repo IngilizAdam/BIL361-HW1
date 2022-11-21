@@ -13,7 +13,7 @@ module tb_islemci();
         rst <= 0;
         buyruk_bellegi[0]  <= 32'h00200093;     //  addi x1, x0, 2 
         buyruk_bellegi[1]  <= 32'h00400113;     //  addi x2, x0, 4 
-        buyruk_bellegi[2]  <= 32'h00600193;     //  addi x3, x0, 6 
+        buyruk_bellegi[2]  <= 32'h00600193;     //  addi x3, x0, 6
         buyruk_bellegi[3]  <= 32'h00800213;     //  addi x4, x0, 8 
         buyruk_bellegi[4]  <= 32'h00a00293;     //  addi x5, x0, 10
         buyruk_bellegi[5]  <= 32'h00102023;     //  sw x1, 0(x0)   
