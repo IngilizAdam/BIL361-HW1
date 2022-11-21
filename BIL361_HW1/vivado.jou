@@ -12,3 +12,8 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/hasan/Desktop/Projects/Vivado/BIL361_HW1/BIL361_HW1/BIL361_HW1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_islemci.tcl
+relaunch_sim
+close_sim
